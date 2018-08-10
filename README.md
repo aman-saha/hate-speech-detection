@@ -1,12 +1,3 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww13600\viewh10360\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-
-\f0\fs24 \cf0 READ ME \
-\
 The following .txt file describes  how to run our Hate-Speech Detection Model:\
 \
 STEP 1) Import the .csv file titled \'91labeled_data.csv\'92 which is found in the \'91initial datasets\'92 folder\
