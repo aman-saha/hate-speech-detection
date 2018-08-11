@@ -1,3 +1,4 @@
+# Machine Learning and NLP methods for Automated Hate-Speech Detection
 The following .md file describes  how to run our Hate-Speech Detection Model:\
 \
 STEP 1) Import the .csv file titled \'91labeled_data.csv\'92 which is found in the \'91initial datasets\'92 folder\
