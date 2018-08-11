@@ -2,8 +2,7 @@
 
 The following describes how to run the Hate-Speech Detection Model from scratch including all pre-processing and feature engineering steps:
 
-- ### STEP 1) 
-Import the .csv file [labeled_data.csv](https://github.com/tpawelski/hate-speech-detection/blob/master/initial%20datasets/labeled_data.csv) (found in the 'initial datasets' folder)
+- __STEP 1:__ Import the .csv file [labeled_data.csv](https://github.com/tpawelski/hate-speech-detection/blob/master/initial%20datasets/labeled_data.csv) (found in the 'initial datasets' folder)
 
 STEP 2) Open the 'feature engineering scripts' folder and run 'clean_tweets.py' which performs initial text corpus pre-processing. The out-put of this script is 'cleaned_tweets.csv' which can also be found in the 'initial datasets' folder.\
 
