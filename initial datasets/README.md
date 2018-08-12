@@ -3,12 +3,20 @@ The dataset used for this project contains 24,784 tweets manually labeled by Cro
 
 ## Definitions
 `index`: the unique identifier of the tweet
+
 `count`: the total # of CrowdFlower users who labeled the tweet 
+
 `hate_speech`: the # of CrowdFlower users who labeled the tweet as containing or constituting hate speech
+
 `offensive_language`: the # of CrowdFlower users who labeled the tweet as containing or constituting offensive language 
+
 `neither`: the # of CrowdFlower users who labeled the Tweet as neither hate speech nor offensive language
-`class`: the majority label given by CrowdFlower users (0 represents hate speech, 1 represents offensive language, and 2 represents neither).
+
+`class`: the majority label given by CrowdFlower users (0 represents hate speech, 1 represents offensive language, and 2 represents neither)
+
 `tweet`: the tweet, in textual form 
+
+`clean_tweet`: the text of the tweet after removing punctiation and coverting to lower-case
 
 ## Data Citation
 The dataset mentioned above was obtained from:
