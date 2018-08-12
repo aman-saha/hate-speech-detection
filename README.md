@@ -10,7 +10,7 @@ __NOTE:__ This is meant to be a customizable model, with the option to include a
 
 ## Instructions ##
 
-The following describes how to run the Hate-Speech Detection Model from scratch including all pre-processing and feature engineering steps:
+The following describes how to run the hate-speech and offensive language detection model (described above) from scratch including all pre-processing and feature engineering steps:
 
 - __STEP 1:__ Import the .csv file [labeled_data.csv](https://github.com/tpawelski/hate-speech-detection/blob/master/initial%20datasets/labeled_data.csv) (found in the `initial datasets` directory)
 
