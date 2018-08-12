@@ -5,7 +5,7 @@
 A more comprehensive description of the dataset is provided in `initial datasets directory`.
 
 
-__NOTE:__ This is meant to be a customizable model, with the option to include any or all of the feature spaces engineered (). To exclude a specific feature type, simply comment it out in lines X-X of [hate_speech_detection.py](https://github.com/tpawelski/hate-speech-detection/blob/master/hate_speech_detection.py).
+__NOTE:__ This is meant to be a customizable model, with the option to include any or all of the feature spaces engineered (). To exclude a specific feature type, simply comment it out in lines 14-20 of [hate_speech_detection.py](https://github.com/tpawelski/hate-speech-detection/blob/master/hate_speech_detection.py).
 
 ## Instructions for running Hate-Speech Model ##
 
