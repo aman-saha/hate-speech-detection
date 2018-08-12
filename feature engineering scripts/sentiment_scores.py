@@ -1,11 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jul  8 20:13:29 2018
 
-@author: kylin
-"""
-
-# read the data
 import math
 import nltk
 import string
@@ -18,31 +11,32 @@ import pandas as pd
 import numpy as np
 import nltk
 from sklearn import cross_validation
+
 # hate database
-dict1=pd.read_csv('/Users/kylin/Downloads/hatebase_dict.csv', encoding = 'ISO-8859-1')
+dict1=pd.read_csv('hatebase_dict.csv', encoding = 'ISO-8859-1')
 dict11 = dict1['dic']
 dic1 = []
 for row in dict11:
     row = row.strip("',")
     dic1.append(row)
 #print(dic)
-# negative words
-dict2=pd.read_csv('/Users/kylin/Downloads/negative word.csv', encoding = 'ISO-8859-1')
+# negative words lexicon
+dict2=pd.read_csv('negative word.csv', encoding = 'ISO-8859-1')
 dict21 = dict2['dic']
 dic2 = []
 for row in dict21:
     row = row.strip("',")
     dic2.append(row)
-# postive word
-dict3=pd.read_csv('/Users/kylin/Downloads/Postive words.csv', encoding = 'ISO-8859-1')
+    
+# postive word lexicon
+dict3=pd.read_csv('Postive words.csv', encoding = 'ISO-8859-1')
 dict31 = dict3['dic']
 dic3 = []
 for row in dict31:
     row = row.strip("',")
     dic3.append(row)
 
-os.chdir('/Users/kylin/Downloads')
-hatedata = pd.read_csv('/Users/kylin/Downloads/cleaned_tweets.csv')
+hatedata = pd.read_csv('cleaned_tweets.csv')
 
 tweet = hatedata['clean_tweet']
 tweet1=tweet.str.split(" ")
@@ -58,7 +52,7 @@ for i in range(24783):
 #print(np.sum(a))
 
 d = np.zeros(len(tweet))
-for i in range(24783):
+for i in range(hatedata.shape[0]):
     l = len(tweet1[i])
     d[i] = a[i]/l
 
@@ -66,7 +60,7 @@ for i in range(24783):
 #print(np.sum(d))
 
 b = np.zeros(len(tweet))
-for i in range(24783):
+for i in range(hatedata.shape[0]):
     ct = 0
     for j in tweet1[i]:
         for g in j.split(" "):
@@ -76,14 +70,14 @@ for i in range(24783):
 #print(np.sum(b))
 
 e = np.zeros(len(tweet))
-for i in range(24783):
+for i in range(hatedata.shape[0]):
     l = len(tweet1[i])
     e[i] = b[i]/l
 
 
 
 c = np.zeros(len(tweet))
-for i in range(24783):
+for i in range(hatedata.shape[0]):
     ct1 = 0
     for j in tweet1[i]:
         for g in j.split(" "):
@@ -93,7 +87,7 @@ for i in range(24783):
 #print(np.sum(c))
 
 f = np.zeros(len(tweet))
-for i in range(24783):
+for i in range(hatedata.shape[0]):
     l = len(tweet1[i])
     f[i] = c[i]/l
 
@@ -104,4 +98,4 @@ hatedata["neg"] = b
 hatedata["negnor"] = e
 hatedata["pos"] = c
 hatedata["posnor"] = f
-hatedata.to_csv('/Users/kylin/Downloads/1.csv')
+hatedata.to_csv('/Users/tommypawelski/Downloads/sentiment_scores.csv')
