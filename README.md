@@ -5,7 +5,7 @@
 
 The dataset used for this project consists of Tweets labeled as `hate-speech`, `offensive language`, or `neither`. A more comprehensive description of the dataset is provided in `initial datasets directory`. The accompanying Python 3 scripts makes use of various Natural Language Processing and Machine Learning techniques to engineer various feature spaces (weighted TF-IDF scores, TF-IDF matrix, N-grams, sentiment scores, and dependency-based features) and trian various multi-class classification algorithms (Logistic Regression, Random Forest, XGBoost, and Multi-layer Perceprton) as well as Ensemble methods (weighted-average voting and stacking with LR meta-classifier). 
 
-To identify the most appropriate algorithm for this text classification task, model performance evaluation methods are provided and a comparative analysis between the models discussed above is included. Given the multi-class nature, micro-average F1-scores and micro-average area under the ROC curve (AUC) are the chosen comparision and evaluation metrics. 
+To identify the most appropriate algorithm for this text classification task, model performance evaluation methods are provided and a comparative analysis between the models discussed above is included. Given the multi-class nature and class label imbalance, micro-average F1-scores and micro-average area under the ROC curve (AUC) are the chosen comparision and evaluation metrics. 
 
 __NOTE:__ This is meant to be a customizable model, with the option to include any or all of the feature spaces engineered. To exclude a specific feature type, simply comment it out in lines 14-20 of [hate_speech_detection.py](https://github.com/tpawelski/hate-speech-detection/blob/master/hate_speech_detection.py).
 
