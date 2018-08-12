@@ -11,13 +11,13 @@ from sklearn.ensemble import VotingClassifier
 from mlxtend.classifier import StackingCVClassifier
 
 #read in each of the feature csv files
-class_labels = pd.read_csv('/Users/tommypawelski/Desktop/Text&Web Analytics/Assignment1/feature datasets/labels.csv',encoding='utf-8')
-weighted_tfidf_score = pd.read_csv('/Users/tommypawelski/Desktop/Text&Web Analytics/Assignment1/feature datasets/tfidf_scores.csv',encoding='utf-8')
-sentiment_scores = pd.read_csv('/Users/tommypawelski/Desktop/Text&Web Analytics/Assignment1/feature datasets/sentiment_scores.csv',encoding='utf-8')
-dependency_features = pd.read_csv('/Users/tommypawelski/Desktop/Text&Web Analytics/Assignment1/feature datasets/dependency_features.csv',encoding='utf-8')
-char_bigrams = pd.read_csv('/Users/tommypawelski/Desktop/Text&Web Analytics/Assignment1/feature datasets/char_bigram_features.csv',encoding='utf-8')
-word_bigrams = pd.read_csv('/Users/tommypawelski/Desktop/Text&Web Analytics/Assignment1/feature datasets/word_bigram_features.csv',encoding='utf-8')
-tfidf_sparse_matrix = pd.read_csv('/Users/tommypawelski/Desktop/Text&Web Analytics/Assignment1/feature datasets/tfidf_features.csv',encoding='utf-8')
+class_labels = pd.read_csv('labels.csv',encoding='utf-8')
+weighted_tfidf_score = pd.read_csv('tfidf_scores.csv',encoding='utf-8')
+sentiment_scores = pd.read_csv('sentiment_scores.csv',encoding='utf-8')
+dependency_features = pd.read_csv('dependency_features.csv',encoding='utf-8')
+char_bigrams = pd.read_csv('char_bigram_features.csv',encoding='utf-8')
+word_bigrams = pd.read_csv('word_bigram_features.csv',encoding='utf-8')
+tfidf_sparse_matrix = pd.read_csv('tfidf_features.csv',encoding='utf-8')
 
 #merge all feature data sets based on 'index' column sentiment_scores, dependency_features, char_bigrams, word_bigrams
 df_list=[class_labels, weighted_tfidf_score,sentiment_scores, dependency_features, char_bigrams, word_bigrams, tfidf_sparse_matrix]
