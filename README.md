@@ -3,7 +3,7 @@
 ## Overview ##
 
 
-The dataset used for this project consists of Tweets labeled as `hate_speech`, `offensive_language`, or `neither`. A more comprehensive description of the dataset is provided in `initial datasets` directory. The accompanying Python 3 scripts makes use of various Natural Language Processing and Machine Learning techniques to engineer various feature spaces (weighted TF-IDF scores, TF-IDF matrix, N-grams, sentiment scores, and dependency-based features) and trian various multi-class classification algorithms (Logistic Regression, Random Forest, XGBoost, and Multi-layer Perceprton) as well as Ensemble methods (weighted-average voting and stacking with LR meta-classifier). 
+The dataset used for this project consists of Tweets labeled as `hate_speech`, `offensive_language`, or `neither`. A more comprehensive description of the dataset is provided in `initial datasets` directory. The accompanying Python 3 scripts make use of Natural Language Processing and Machine Learning techniques to engineer various feature spaces (weighted TF-IDF scores, TF-IDF matrix, N-grams, sentiment scores, and dependency-based features) and trian various multi-class classification algorithms (Logistic Regression, Random Forest, XGBoost, and Multi-layer Perceprton) as well as Ensemble methods (weighted-average voting and stacking with LR meta-classifier). 
 
 To identify the most appropriate algorithm for this text classification task, model performance evaluation methods are provided and a comparative analysis between the models discussed above is included. Given the multi-class nature and class label imbalance, micro-average F1-scores and micro-average area under the ROC curve (AUC) are the chosen comparision and evaluation metrics. 
 
@@ -19,6 +19,20 @@ The following describes how to run the hate-speech and offensive language detect
 
 - __STEP 3:__  Open and run each of the remaining scripts in the `feature engineering scripts` directory  which will create each of the feature subsets and output them as .csv files. The .csv file outputs from this step can be found in the `feature datasets` directory. The dictionaries required for this step can be found in the `dictionaries` directory. 
 
-- __STEP 4:__ Open and run the script [hate_speech_detection.py](https://github.com/tpawelski/hate-speech-detection/blob/master/hate_speech_detection.py) which reads in the .csv files in the `feature datasets` directory, merges them into a single data frame, trains models to classify instances as either hate speech, offensive language, or neither, and performs model evaluation assesments on the testing set. 
+- __STEP 4:__ Open and run the script [hate_speech_detection.py](https://github.com/tpawelski/hate-speech-detection/blob/master/hate_speech_detection.py) which reads in the .csv files in the `feature datasets` directory, merges them into a single pandas data frame, trains models to classify instances as either hate speech, offensive language, or neither, and performs model evaluation assesments on the testing set. 
 
 - __STEP 5:__ Re-run steps 2-3 on any new raw text data, along with the best performing model trained in step 4, to detect instances of hate-speech and offensive language. 
+
+## Requirements ##
+
+Installation of the following Python 3 packages is required to run this project: 
+
+- nltk
+- sklearn
+- stanfordcorenlp
+- pandas
+- numpy
+- mlxtend.classifier
+- re
+- string
+- json
