@@ -2,6 +2,10 @@
 
 ## Overview ##
 
+
+
+### NOTE: ### This is meant to be a customizable model, with the option to include any or all of the feature spaces engineered (). To exclude a specific feature type, simply comment it out in lines X-X of [hate_speech_detection.py](https://github.com/tpawelski/hate-speech-detection/blob/master/hate_speech_detection.py).
+
 ## Instructions for running Hate-Speech Model ##
 
 The following describes how to run the Hate-Speech Detection Model from scratch including all pre-processing and feature engineering steps:
