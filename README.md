@@ -25,7 +25,7 @@ The following describes how to run the hate-speech and offensive language detect
 
 ## Requirements ##
 
-Installation of the following Python 3 packages is required to run this project: 
+The following Python 3 packages require installation to run this project: 
 
 - nltk
 - sklearn
