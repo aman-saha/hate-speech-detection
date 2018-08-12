@@ -7,7 +7,7 @@ The dataset used for this project consists of Tweets labeled as `hate-speech`, `
 
 To identify the most appropriate algorithm for this text classification task, model performance evaluation methods are provided and a comparative analysis between the models discussed above is included. Given the multi-class nature and class label imbalance, micro-average F1-scores and micro-average area under the ROC curve (AUC) are the chosen comparision and evaluation metrics. 
 
-__NOTE:__ This is meant to be a customizable model, with the option to include any or all of the feature spaces engineered. To exclude a specific feature type, simply comment it out in lines 14-20 of [hate_speech_detection.py](https://github.com/tpawelski/hate-speech-detection/blob/master/hate_speech_detection.py).
+__NOTE:__ This is meant to be a customizable model that can be applied to new data, with the option to include any or all of the feature spaces engineered. To exclude a specific feature type, simply comment it out in lines 14-20 of [hate_speech_detection.py](https://github.com/tpawelski/hate-speech-detection/blob/master/hate_speech_detection.py).
 
 ## Instructions ##
 
