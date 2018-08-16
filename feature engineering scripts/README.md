@@ -1,3 +1,3 @@
 # Feature Engineering
 
-Five feature spaces were engineering including TF-IDF, N-grams (char and word level), Typed-Dependency, Sentiment Scores and 
+Four types of feature spaces were engineering including TF-IDF (weighted score and matrix), N-grams (char and word level), typed-dependencies, and sentiment scores.
