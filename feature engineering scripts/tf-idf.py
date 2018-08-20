@@ -12,7 +12,7 @@ import csv
 data=pd.read_csv('labeled_data.csv',encoding = 'utf8')
 tweet = data['tweet']
 
-### dictionary into a list
+# dictionary into a list
 dict=pd.read_csv('hatebase_dict.csv', encoding = 'ISO-8859-1')
 dict2 = dict['dic']
 dic = []
@@ -22,7 +22,7 @@ for row in dict2:
 print(dic)
 
 
-### Regula expression
+# Regular expression
 def preprocess(text):
     text = text.strip().strip('"')
     text = re.sub(r'[^A-Za-z0-9(),!?\.\'\`]', ' ', text)
@@ -42,13 +42,7 @@ def preprocess(text):
     #text = re.sub(r"\S{2,}", " ", text)
     return text.strip().lower()
 
-#text = "!!!!! RT @mleew17: boy dats cold...tyga dwn bad for cuffin dat hoe in the 1st place!!"
-#tokens = nltk.word_tokenize(text)
-#print(tokens)
-#for token in tokens:
-#    print (token.isalnum())
-
-### calculated term frequency
+# calculate term frequency
 def phrase_frequency(text):
     text = preprocess(text)
     tokens = nltk.word_tokenize(text)
@@ -71,7 +65,6 @@ def phrase_frequency(text):
     return term_freqs
 
 
-
 def term_frequency(text):
     text = preprocess(text)
     tokens = nltk.word_tokenize(text)
@@ -86,8 +79,6 @@ def term_frequency(text):
             term_freqs[token] = 1 / len(text)
     return term_freqs
 
-#text = "!!!!! RT @mleew17: boy dats cold...tyga dwn bad for cuffin dat hoe in the 1st place!!"
-#print(term_frequency(text))
 def term_fre(text):
     term_freqs = {}
     for word in term_frequency(text).keys():
@@ -96,8 +87,6 @@ def term_fre(text):
         else:
             continue
     return term_freqs
-#text = "!!!!! RT @mleew17: boy dats cold...tyga dwn bad for cuffin dat hoe in the 1st place!!"
-#print(term_fre(text))
 
 
 
@@ -107,7 +96,7 @@ for no, rows in enumerate(tweet):
 #print (docs[2])
 
 
-### calculated document frequency
+# calculated document frequency
 def document_frequency(docs):
     freqs = {}
     list1 = []
@@ -122,7 +111,7 @@ def document_frequency(docs):
     return freqs
 #print (document_frequency(docs))
 
-### calculated tfidf score
+# calculate tfidf score
 def tfidf_score(docs):
     doc_freqs = document_frequency(docs)
     for i in range (len(docs)):
