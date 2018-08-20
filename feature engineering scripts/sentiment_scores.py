@@ -19,6 +19,7 @@ dic1 = []
 for row in dict11:
     row = row.strip("',")
     dic1.append(row)
+    
 #print(dic)
 # negative words lexicon
 dict2=pd.read_csv('negative word.csv', encoding = 'ISO-8859-1')
@@ -40,62 +41,52 @@ hatedata = pd.read_csv('cleaned_tweets.csv')
 
 tweet = hatedata['clean_tweet']
 tweet1=tweet.str.split(" ")
-a = np.zeros(len(tweet))
-for i in range(24783):
+hate = np.zeros(len(tweet))
+for i in range(hatedata.shape[0]):
     count = 0
     for j in tweet1[i]:
         for g in j.split(" "):
             if g in dic1:
                 count+=1
-        a[i]=count
+        hate[i]=count
 
-#print(np.sum(a))
-
-d = np.zeros(len(tweet))
+hatenor = np.zeros(len(tweet))
 for i in range(hatedata.shape[0]):
     l = len(tweet1[i])
-    d[i] = a[i]/l
+    hatenor[i] = hate[i]/l
 
-    
-#print(np.sum(d))
-
-b = np.zeros(len(tweet))
+neg = np.zeros(len(tweet))
 for i in range(hatedata.shape[0]):
     ct = 0
     for j in tweet1[i]:
         for g in j.split(" "):
             if g in dic2:
                 ct+=1
-        b[i]=ct
-#print(np.sum(b))
+        neg[i]=ct
 
-e = np.zeros(len(tweet))
+negnor = np.zeros(len(tweet))
 for i in range(hatedata.shape[0]):
     l = len(tweet1[i])
-    e[i] = b[i]/l
+    negnor[i] = neg[i]/l
 
-
-
-c = np.zeros(len(tweet))
+pos = np.zeros(len(tweet))
 for i in range(hatedata.shape[0]):
     ct1 = 0
     for j in tweet1[i]:
         for g in j.split(" "):
             if g in dic3:
                 ct1+=1
-        c[i]=ct1
-#print(np.sum(c))
+        pos[i]=ct1
 
-f = np.zeros(len(tweet))
+posnor = np.zeros(len(tweet))
 for i in range(hatedata.shape[0]):
     l = len(tweet1[i])
-    f[i] = c[i]/l
+    posnor[i] = pos[i]/l
 
-
-hatedata["hate"] = a
-hatedata["hatenor"] = d
-hatedata["neg"] = b
-hatedata["negnor"] = e
-hatedata["pos"] = c
-hatedata["posnor"] = f
-hatedata.to_csv('/Users/tommypawelski/Downloads/sentiment_scores.csv')
+hatedata["hate"] = hate
+hatedata["hatenor"] = hatenor
+hatedata["neg"] = neg
+hatedata["negnor"] = negnor
+hatedata["pos"] = pos
+hatedata["posnor"] = posnor
+hatedata.to_csv('sentiment_scores.csv')
