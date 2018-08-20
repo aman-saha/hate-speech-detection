@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 from nltk import word_tokenize
 
-data = pd.read_csv('/Users/tommypawelski/Desktop/Text&Web Analytics/Assignment1/cleaned_tweets.csv',encoding='utf-8')
+data = pd.read_csv('cleaned_tweets.csv',encoding='utf-8')
 
 stemmer = SnowballStemmer("english")
 data['stemmed'] = data.clean_tweet.map(lambda x: ' '.join([stemmer.stem(y) for y in x.split(' ')]))
@@ -20,7 +20,7 @@ cv_mat = cv.transform(data.stemmed)
 
 bigrams = pd.DataFrame(cv_mat.todense(), index=data['index'], columns=cv.get_feature_names())
 bigrams = bigrams.add_prefix('word_bigrams:')
-bigrams.to_csv('/Users/tommypawelski/Desktop/word_bigram_features.csv')
+bigrams.to_csv('word_bigram_features.csv')
 
 
 print ('Non-zero count:', cv_mat.nnz)
@@ -43,7 +43,7 @@ cv_char_mat = cv_char.transform(data.char_stem)
 char_bigrams = pd.DataFrame(cv_char_mat.todense(), index=data['index'], columns=cv_char.get_feature_names())
 char_bigrams = char_bigrams.add_prefix('char_bigrams:')
 
-char_bigrams.to_csv('/Users/tommypawelski/Desktop/char_bigram_features.csv')
+char_bigrams.to_csv('char_bigram_features.csv')
 
 print ('Non-zero count:', cv_char_mat.nnz)
 print ('Sparsity: %.2f%%' % (100.0 * cv_char_mat.nnz / (cv_char_mat.shape[0] * cv_char_mat.shape[1])))
@@ -69,4 +69,4 @@ tf_idf =pd.DataFrame(transformed_weights.todense(), index=data['index'], columns
 
 tf_idf = tf_idf.add_prefix('tfidf:')
 
-tf_idf.to_csv('/Users/tommypawelski/Desktop/tfidf_features.csv')
+tf_idf.to_csv('tfidf_features.csv')
