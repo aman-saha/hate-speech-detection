@@ -16,7 +16,7 @@ The dataset used for this project contains 24,784 tweets manually labeled by Cro
 
 `tweet`: the tweet, in textual form 
 
-`clean_tweet`: the text of the tweet after removing punctiation and coverting to lower-case
+`clean_tweet`: the text of the tweet after removing punctuation and converting to lower-case
 
 ## Data Citation
 The dataset mentioned above was obtained from:
